@@ -1,5 +1,4 @@
 # hexbrew
 HexBrew reads a YAML configuration file and outputs a formula and commands to create a homebrew tap
 
-![hexbrew](https://github.com/user-attachments/assets/aa55e998-890d-4b8d-bf0c-9e7069b16c12)
-
+![hexbrew2](https://github.com/user-attachments/assets/9324da73-d9fd-49c9-ae41-09990dd17e53)
