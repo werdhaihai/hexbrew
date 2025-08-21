@@ -14,6 +14,7 @@ class BrewPackager:
         self.files_dir = Path(self.config['files_dir'])
         self.output_dir = Path(self.config['output_dir'])
         self.codesign = self.config.get('codesign', False)
+        self.download_url = self.config['download_url']
         self.commands = self.config.get('commands', [])
 
     def create_tarball(self):
@@ -36,8 +37,16 @@ class BrewPackager:
         formula = f"""class {self.name.capitalize()} < Formula
     desc "{self.config['description']}"
     homepage "{self.config['homepage']}"
-    url "https://github.com/{self.config['github_repo']}/releases/download/v{self.version}/{tarball_path.name}"
-    sha256 "{sha256}"
+    """
+        #Add custom download URL if enabled
+        if self.download_url:
+            formula += f"""url "{self.download_url}"
+    """
+        else:
+            formula += f"""url "https://github.com/{self.config['github_repo']}/raw/refs/heads/main/{tarball_path.name}"
+    """
+            
+        formula += f"""sha256 "{sha256}"
     version "{self.version}"
 
     def install
