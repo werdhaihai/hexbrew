@@ -28,6 +28,7 @@ github_repo: werdhaihai/maliciousformula
 files_dir: ./files
 output_dir: ./dist
 codesign: true
+download_url: 
 commands: 
 caveat: |
   To finish installation, add the following line to .zshrc or .bashrc  
