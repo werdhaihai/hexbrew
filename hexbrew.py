@@ -43,7 +43,7 @@ class BrewPackager:
             formula += f"""url "{self.download_url}"
     """
         else:
-            formula += f"""https://github.com/{self.config['github_repo']}/releases/download/v{self.version}/{tarball_path.name}"
+            formula += f"""url https://github.com/{self.config['github_repo']}/releases/download/v{self.version}/{tarball_path.name}"
     """
             
         formula += f"""sha256 "{sha256}"
